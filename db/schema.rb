@@ -24,9 +24,9 @@ ActiveRecord::Schema.define(version: 2018_07_13_051815) do
   end
 
   create_table "locations", force: :cascade do |t|
-    t.text "name"
-    t.integer "lng"
-    t.integer "lat"
+    t.text "address"
+    t.float "longitude"
+    t.float "latitude"
     t.text "api_id"
     t.text "image"
     t.datetime "created_at", null: false
