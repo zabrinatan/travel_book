@@ -13,8 +13,9 @@
 #
 
 class Location < ApplicationRecord
+  geocoded_by :address
+  after_validation :geocode, if :address_changed?
   has_and_belongs_to_many :dashboards
   has_many :users, :through => :dashboard
-  geocoded_by :address
-  after_validation :geocode
+end
 end
