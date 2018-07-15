@@ -20,8 +20,6 @@ class LocationsController < ApplicationController
     @location = Location.find params[:id]
     Rails.application.credentials.google_api
     #retrieving longitude and latitude based on user input. reaches out to geocoder api for coordinates
-    # @maps_url = "https://maps.googleapis.com/maps/api/geocode/json?address=#{@location.address}&key=#{Rails.application.credentials.google_api}"
-
     results = Geocoder.search("#{@location.address}")
     coordinates= results.first.coordinates #[latitude, longitude]
     @location.latitude = coordinates.first
@@ -34,11 +32,11 @@ class LocationsController < ApplicationController
     image_url_info = HTTParty.get image_url
     @location.image = image_url_info['sizes']['size'][4]['source']
 
+    #google places points of interest
     @client = GooglePlaces::Client.new("#{Rails.application.credentials.google_api}")
-    @spots = @client.spots(@location.latitude,@location.longitude,:types => 'restaurant')
+    @point_of_interest= @client.spots_by_query(" #{@location.address} points of interest")
 
     @location.save
-
 
 
 
