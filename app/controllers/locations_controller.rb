@@ -33,14 +33,13 @@ class LocationsController < ApplicationController
     image_url = "https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=ca370d51a054836007519a00ff4ce59e&photo_id=#{image_id}&format=json&nojsoncallback=1"
     image_url_info = HTTParty.get image_url
     @location.image = image_url_info['sizes']['size'][4]['source']
-    #
+
     @client = GooglePlaces::Client.new("#{Rails.application.credentials.google_api}")
-    # # @spot = @client.spot
-    #
+    @spots = @client.spots(@location.latitude,@location.longitude,:types => 'restaurant')
+
     @location.save
 
-    # <%= list(@location.latitude, @location.longitude, @api_key, :radius => 1000)
-    # %>
+
 
 
   end
