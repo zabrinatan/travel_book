@@ -12,7 +12,7 @@
 class User < ApplicationRecord
   has_secure_password
   validates :email, :presence => true, :uniqueness => true
-  has_one :dashboard
+  has_many :dashboards
   has_many :locations, :through => :dashboard
 
 end
