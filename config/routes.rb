@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root :to => 'pages#home'
   resources :users, :only =>[:index, :new, :create]
   resources :locations
+  resources :dashboards
 
   get '/login' => 'session#new' #login form
   post '/login' => 'session#create' # perform a login

@@ -34,7 +34,7 @@ class LocationsController < ApplicationController
 
     #google places points of interest
     @client = GooglePlaces::Client.new("#{Rails.application.credentials.google_api}")
-    @point_of_interest= @client.spots_by_query(" #{@location.address} points of interest")
+    @point_of_interest= @client.spots_by_query(" #{@location.address} attractions")
 
     @location.save
 

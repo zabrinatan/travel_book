@@ -17,6 +17,20 @@
   </head>
 
   <body>
+    <nav>
+
+    <%= link_to 'Home', root_path %>
+    <%= link_to 'Search New Location' , new_location_path %>
+    <%= link_to 'My Dashboards' , dashboards_path %>
+    <%= link_to 'Add New Dashboard', new_dashboard_path	 %>
+    <% if @current_user.present? %>
+    <%= link_to "Sign out #{@current_user.email}", login_path, :method => "delete" %>
+    <% else %>
+    <%= link_to 'Sign up', new_user_path %>
+    <%= link_to 'Sign in', login_path %>
+  <% end %>
+
+  </nav>
     <%= yield %>
   </body>
 </html>
