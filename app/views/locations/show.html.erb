@@ -16,3 +16,10 @@
 
 
 <% end %>
+
+<%= form_tag do%>
+<%=label_tag 'Add to Dashboard'%>
+<%= select_tag @dashboards.name, options_for_select(@dashboards.all.collect {|d| ([d.name])}) %>
+
+<%= submit_tag 'Search'%>
+<% end %>
