@@ -20,7 +20,7 @@ Geocoder.configure(
   # units: :mi,                 # :km for kilometers or :mi for miles
   # distances: :linear          # :spherical or :linear
   lookup: :google,
-  api_key: "#{Rails.application.credentials.google_api}",
+  api_key: "AIzaSyDq7PyzaM_5hv6GXly9Cw4SSgrPmy0sMMQ",
   timeout: 30,
   use_https: true,
 )
