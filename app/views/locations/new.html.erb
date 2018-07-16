@@ -4,16 +4,15 @@
 <%= form_for @location do |f| %>
 
 <%= f.label :address %>
-<%= f.text_field :address, :id => 'autocomplete'%>
+<%= f.text_field :address, :class =>"input"%>
 
 <%= f.submit 'Search'%>
 <% end %>
 
 <% @locations[0..4].each do |location| %>
 <div class="thumbnail">
-
-  <%= link_to "#{location.address}", location_path(location.id) %>
   <%= image_tag "#{location.image}" %>
+<p><%= link_to "#{location.address}", location_path(location.id) %></p>
 
 </div>
   <% end %>

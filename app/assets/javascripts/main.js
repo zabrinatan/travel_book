@@ -1,6 +1,9 @@
 console.log('Hello World')
 
 $(document).ready(function () {
-  console.log('Hello World from main.js')
+  $('.dash_link').on('click', function(event){
+    event.preventDefault();
+    $(this).closest('.location').find('.frame').toggle(1000);
+  })
 
 });

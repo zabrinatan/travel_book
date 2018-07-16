@@ -2,11 +2,16 @@
 <p>Find me in app/views/dashboard/show.html.erb</p>
 
 <% @dashboard.locations.each do |location| %>
-<ul>
-  <li><%= link_to "#{location.address}" , location_path(location)%></li>
-</ul>
+  <div class="location">
+    <ul>
+      <li><%= link_to "#{location.address}" , location_path(location), :class => "dash_link"%></li>
+    </ul>
 
-<div class="controls">
-  <%= button_to "Delete #{location.address}", location_path(location), :method => 'delete' %>
-</div>
+    <div class="controls">
+      <%= button_to "Delete #{location.address}", location_path(location), :method => 'delete' %>
+    </div>
+
+    <iframe class="frame"  src="<%= location_path(location) %>"></iframe>
+  </div>
+
 <% end %>

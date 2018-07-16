@@ -21,21 +21,3 @@
 <%=hidden_field_tag :location_id, @location.id  %>
 <%= submit_tag 'Add to Dashboard'%>
 <% end %>
-
-<script>
-  function initMap() {
-    var myLatLng = {lat: <%= @location.latitude %>, lng: <%= @location.longitude %>};
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 15,
-      center: myLatLng
-    });
-    var marker = new google.maps.Marker({
-      position: myLatLng,
-      map: map,
-      title: 'Hello World!'
-    });
-  }
-</script>
-<script async defer
-   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpskf5JVqWv7kAPgmuqRgYR9NeN6eeWSY&callback=initMap">
-   </script>
