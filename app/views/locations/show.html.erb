@@ -6,9 +6,7 @@
 
 <img src="<%= @location.image %>" alt="image">
 
-<!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d424143.27905817906!2d150.65109547539143!3d-33.84792546661385!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b129838f39a743f%3A0x3017d681632a850!5e0!3m2!1sen!2sau!4v1531538132899" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe> -->
 
-<h2>point_of_interest</h2>
 <% @point_of_interest.each do |spot| %>
 <ul>
 <li><%= spot.name %></li>
@@ -17,9 +15,9 @@
 
 <% end %>
 
-<%= form_tag do%>
-<%=label_tag 'Add to Dashboard'%>
-<%= select_tag @dashboards.name, options_for_select(@dashboards.all.collect {|d| ([d.name])}) %>
-
-<%= submit_tag 'Search'%>
+<%= form_tag favourite_dashboard_path do%>
+<%=label_tag :dashboard_id, 'Add to Dashboard'%>
+<%= select_tag :dashboard_id, options_for_select(@dashboards.all.pluck(:name, :id)) %>
+<%=hidden_field_tag :location_id, @location.id  %>
+<%= submit_tag 'Add to Dashboard'%>
 <% end %>

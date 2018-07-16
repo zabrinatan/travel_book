@@ -29,6 +29,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'geocoder'
 gem 'google_places'
 gem 'httparty'
+gem 'pry-rails'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
