@@ -5,7 +5,7 @@
 <p>longitude: <%= @location.longitude %>, latitude: <%= @location.latitude %> </p>
 
 <img src="<%= @location.image %>" alt="image">
-
+<%= @location.image %>
 <div id="map"></div>
 <% @point_of_interest.each do |spot| %>
 <ul>
