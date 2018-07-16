@@ -6,4 +6,7 @@
   <li><%= link_to "#{location.address}" , location_path(location)%></li>
 </ul>
 
+<div class="controls">
+  <%= button_to "Delete #{location.address}", location_path(location), :method => 'delete' %>
+</div>
 <% end %>

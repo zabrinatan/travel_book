@@ -4,4 +4,7 @@
 
 <% @dashboards.each do |dashboard| %>
 <p><%= link_to "#{dashboard.name}" , dashboard_path(dashboard.id) %></p>
+<div class="controls">
+  <%= button_to "Delete #{dashboard.name}", dashboard_path(dashboard.id), :method => 'delete' %>
+</div>
 <% end %>

@@ -1,7 +1,6 @@
-$(document).ready(function(){
-function activatePlacesSearch(){
- var input = document.getElementById('autocomplete')
- var autocomplete = new google.maps.places.Autocomplete(input);
-}
+console.log('Hello World')
 
-})
+$(document).ready(function () {
+  console.log('Hello World from main.js')
+
+});

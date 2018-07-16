@@ -34,7 +34,7 @@ class LocationsController < ApplicationController
 
     #google places points of interest
     @client = GooglePlaces::Client.new("#{Rails.application.credentials.google_api}")
-    @point_of_interest= @client.spots_by_query(" #{@location.address} attractions")
+    @point_of_interest= @client.spots_by_query(" #{@location.address} attractions")[0..9]
 
     # adding location_id to dashboard to update which locations belong to dashboard
       @dashboards =  Dashboard.where(:user_id => @current_user)
@@ -50,6 +50,14 @@ class LocationsController < ApplicationController
     redirect_to dashboard
 
  end
+ def destroy
+   @location = Location.find params[:id]
+   @location.destroy
+   redirect_to dashboard_path
+ end
+
+
+
 
   private
   def location_params
