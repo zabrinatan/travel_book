@@ -15,7 +15,7 @@ Location.destroy_all
 
 l1 = Location.create :address => 'Sydney, Australia', :latitude => -33.8688197, :longitude => 151.2092955, :image =>"https://farm4.staticflickr.com/3793/12186561576_0a7bd2368b_n.jpg"
 l2 = Location.create :address => 'Bali, Indonesia', :latitude => -8.4095178, :longitude => 115.188916, :image => "https://farm4.staticflickr.com/3782/13940226364_f3f5c947ae_n.jpg"
-l3 = Location.create :address => 'Perth, Australia', :longitude => "115.8604572", :latitude => "-31.9505269", :image => " https://farm5.staticflickr.com/4231/35486487246_1af0ec56d1_n.jpg"
+l3 = Location.create :address => 'Perth, Australia', :longitude => "115.8604572", :latitude => "-31.9505269", :image => "https://farm5.staticflickr.com/4231/35486487246_1af0ec56d1_n.jpg"
 
 Dashboard.destroy_all
 

@@ -23,8 +23,10 @@ class LocationsController < ApplicationController
     #retrieving longitude and latitude based on user input. reaches out to geocoder api for coordinates
     results = Geocoder.search("#{@location.address}")
     coordinates= results.first.coordinates #[latitude, longitude]
+    # unless Location.exists?(address: @location.address)
     @location.latitude = coordinates.first
     @location.longitude = coordinates.last
+    # end
     #image for location address call to flickr api
     image_url_id = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=63d8a83c1f8a75ab3a59b4dc4421b792&per_page=10&format=json&nojsoncallback=1&text=#{@location.address}&tags=cityscape&sort=interestingness-desc"
     image_info = HTTParty.get image_url_id

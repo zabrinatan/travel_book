@@ -9,10 +9,11 @@
 <%= f.submit 'Search'%>
 <% end %>
 
-
+<% @locations[0..4].each do |location| %>
 <div class="thumbnail">
-  <% @locations[0..4].each do |location| %>
+
   <%= link_to "#{location.address}", location_path(location.id) %>
   <%= image_tag "#{location.image}" %>
-  <% end %>
+
 </div>
+  <% end %>
