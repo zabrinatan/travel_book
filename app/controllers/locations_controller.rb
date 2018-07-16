@@ -25,15 +25,15 @@ class LocationsController < ApplicationController
     @location.latitude = coordinates.first
     @location.longitude = coordinates.last
     #image for location address call to flickr api
-    image_url_id = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=#{Rails.application.credentials.flickr_api}&per_page=10&format=json&nojsoncallback=1&text=#{@location.address}&tags=cityscape&sort=interestingness-desc"
+    image_url_id = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=63d8a83c1f8a75ab3a59b4dc4421b792&per_page=10&format=json&nojsoncallback=1&text=#{@location.address}&tags=cityscape&sort=interestingness-desc"
     image_info = HTTParty.get image_url_id
     image_id = image_info['photos']['photo'].first['id']
-    image_url = "https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=#{Rails.application.credentials.flickr_api}&photo_id=#{image_id}&format=json&nojsoncallback=1"
+    image_url = "https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=63d8a83c1f8a75ab3a59b4dc4421b792&photo_id=#{image_id}&format=json&nojsoncallback=1"
     image_url_info = HTTParty.get image_url
     @location.image = image_url_info['sizes']['size'][4]['source']
 
     #google places points of interest
-    @client = GooglePlaces::Client.new("#{Rails.application.credentials.google_api}")
+    @client = GooglePlaces::Client.new("AIzaSyDq7PyzaM_5hv6GXly9Cw4SSgrPmy0sMMQ")
     @point_of_interest= @client.spots_by_query(" #{@location.address} attractions")[0..9]
 
     # adding location_id to dashboard to update which locations belong to dashboard
