@@ -1,2 +1,12 @@
 <h1>Locations#index</h1>
 <p>Find me in app/views/locations/index.html.erb</p>
+
+<% @locations.each do |location| %>
+<ul>
+  <li><%= location.address %></li>
+</ul>
+<div class="controls">
+  <%= button_to 'Delete location', location_path(location.id), :method => 'delete' %>
+</div>
+
+<% end %>

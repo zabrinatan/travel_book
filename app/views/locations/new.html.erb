@@ -9,7 +9,7 @@
 <%= f.submit 'Search'%>
 <% end %>
 </div>
-<% @locations[0..4].each do |location| %>
+<% @locations[0..5].each do |location| %>
 <div class="thumbnail">
 <%= link_to image_tag("#{location.image}"), location_path(location)
  %>

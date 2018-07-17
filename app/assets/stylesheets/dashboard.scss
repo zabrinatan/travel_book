@@ -5,10 +5,12 @@ body {
   background: linear-gradient(rgba(99, 148, 170, 0.8),rgba(226, 215, 122, 0.67), rgba(23, 51, 78, 0.8));
   background-size: auto;
   background-repeat:no-repeat;
+  margin: 0 auto;
+  text-align: center;
+
+
 }
 .container {
-  max-width: 960px;
-  margin: 0 auto;
   text-align: center;
 }
 .thumbnail {
@@ -76,3 +78,48 @@ body {
   width: 30%;
   border-radius: 1em;
 }
+
+nav {
+  background-color: rgba(0, 0, 0, 0.73);
+  padding: 10vh;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  margin: 30px;
+  font-size: 3vh;
+  padding: 10px;
+}
+
+// .sidebar {
+//   position: fixed;
+//   width: 200px;
+//   height: 100%;
+//   background-color: black;
+// }
+
+// .sidebar ul li {
+//   color: white;
+//   text-decoration: none;
+//   list-style: none;
+//   padding: 15px;
+//   border-bottom: 1px solid rgba(100,100, 100, 0.3);
+// }
+//
+// .sidebar .togglebutton {
+//   position: absolute;
+//   left: 230px;
+//   top: 20px;
+// }
+//
+// .sidebar .togglebutton span {
+//   display:block;
+//   width: 30px;
+//   height: 5px;
+//   margin: 5px 0;
+//   background: pink;
+// }
+// .sidebar .active {
+//   left: 0px;
+// }
