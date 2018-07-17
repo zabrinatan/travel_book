@@ -24,9 +24,10 @@ body {
   grid-row: 2;
   grid-column: 1;
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-template-column: 1fr 1fr 1fr;
   grid-gap: 3%;
+  height: 40%;
 }
 
 .thumbnail {
@@ -116,39 +117,42 @@ nav a {
 }
 
 .interests {
-  border: 1px solid black;
-  // display: block
+  display: block;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.row_two {
   grid-column: 1;
   grid-row: 2;
 }
 
-.interests ul {
-  // width: 30%;
-}
 
 .image_show {
   // height: auto;
   // width: 20%;
-  // display: block;
-  // text-align: left;
-  // margin: 20px;
+  display: block;
+  margin: 0 auto;
   grid-row: 1;
   grid-column: 1;
-  margin-top: 20px;
-  margin-left: 10px;
-  // display: block;
 }
-// .dash_form {
-//   border: 1px solid black;
-//   float: right;
-//  display: inline-block;
-//   grid-row: 1;
-// }
+.dash_form {
+margin-bottom: 15px;
+}
 
-.temp, .weather{
+.temp {
   grid-row: 1;
   grid-column: 2;
   width: 80%;
+  margin: 0 auto;
+
+}
+
+.weather {
+  grid-row: 1;
+  grid-column: 3;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .temp p, .weather p{
@@ -158,10 +162,22 @@ nav a {
   color: white;
   font-size: 40px;
   text-decoration: underline;
-  text-decoration-style: double;
+  text-decoration-style: wavy;
+}
+.interests li {
+  margin: 0 auto;
+  color: white;
+  padding-top: 10px;
+
 }
 
-.temp h3, .weather h3{
+.interest {
+  background-color: rgba(0, 0, 0, 0.40);
+  margin: 0 auto;
+  display: block;
+
+}
+.temp h3, .weather h3, .interests h3{
   background-color: rgba(0, 0, 0, 0.60);
   padding: 20px;
   margin: 0;
@@ -172,4 +188,13 @@ nav a {
   grid-row:1;
   grid-column: 3;
   width: 80%;
+}
+
+#map {
+  background-color: black;
+  color: white;
+  text-align: center;
+  grid-row: 2;
+  grid-column: 2/3;
+  font-size: 20px;
 }

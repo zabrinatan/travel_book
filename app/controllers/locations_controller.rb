@@ -44,7 +44,9 @@ class LocationsController < ApplicationController
     weather_info = HTTParty.get weather_url
 
     @name = weather_info['list'][0]['name']
-    @temp = weather_info['list'][0]['main']['temp']
+    temp = weather_info['list'][0]['main']['temp'].to_i
+    temp_one = temp - 273.15
+    @temp = temp_one.round(0)
     @weather = weather_info['list'][0]['weather'][0]['main']
 
     @dashboards =  Dashboard.where(:user_id => @current_user)
