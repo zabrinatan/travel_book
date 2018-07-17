@@ -1,6 +1,7 @@
 <h1><%= @dashboard.name %></h1>
 <p>Find me in app/views/dashboard/show.html.erb</p>
 
+<div class="sidebar">
 <% @dashboard.locations.each do |location| %>
   <div class="location">
     <ul>
@@ -13,5 +14,7 @@
 
     <iframe class="frame"  src="<%= location_path(location) %>"></iframe>
   </div>
+
+
 
 <% end %>

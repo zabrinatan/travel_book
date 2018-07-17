@@ -4,7 +4,7 @@
 <p>Find me in app/views/locations/new.html.erb</p>
 <%= form_for @location do |f| %>
 <%= f.label :address %>
-<%= f.text_field :address, :class =>'input'%>
+<%= f.text_field :address, :class =>'input', :placeholder => "  City, Country (eg: Sydney, Australia)",:required=>true%>
 
 <%= f.submit 'Search'%>
 <% end %>
@@ -18,3 +18,5 @@
   </div>
 </div>
 <% end %>
+<!-- <div id="openweathermap-widget-22"></div>
+<script>window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];  window.myWidgetParam.push({id: 22,lon:120.984222,lat:14.599512 ,appid: '72428b3ec7ac8bf153765be2ca516308',units: 'metric',containerid: 'openweathermap-widget-22',  });  (function() {var script = document.createElement('script');script.async = true;script.charset = "utf-8";script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(script, s);  })();</script> -->

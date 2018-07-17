@@ -39,8 +39,15 @@ class LocationsController < ApplicationController
     @client = GooglePlaces::Client.new("AIzaSyDq7PyzaM_5hv6GXly9Cw4SSgrPmy0sMMQ")
     @point_of_interest= @client.spots_by_query(" #{@location.address} attractions")[0..9]
 
-    # adding location_id to dashboard to update which locations belong to dashboard
-      @dashboards =  Dashboard.where(:user_id => @current_user)
+    weather_url = "http://api.openweathermap.org/data/2.5/find?lat=#{@location.latitude}&lon=#{@location.longitude}&appid=72428b3ec7ac8bf153765be2ca516308&cnt=1"
+
+    weather_info = HTTParty.get weather_url
+
+    @name = weather_info['list'][0]['name']
+    @temp = weather_info['list'][0]['main']['temp']
+    @weather = weather_info['list'][0]['weather'][0]['main']
+
+    @dashboards =  Dashboard.where(:user_id => @current_user)
 
     @location.save
   end

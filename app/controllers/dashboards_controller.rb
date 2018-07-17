@@ -20,6 +20,7 @@ class DashboardsController < ApplicationController
     @dashboard = Dashboard.find params[:id]
 
   end
+
   def destroy
     @dashboard =  Dashboard.find params[:id]
     @dashboard.destroy

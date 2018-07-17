@@ -1,23 +1,34 @@
-<h1>hi</h1>
+<div class="grid-container">
+  <h1><%= @location.address%></h1>
+  <div class="dash_form">
+    <%= form_tag favourite_dashboard_path do%>
+    <%=label_tag :dashboard_id, 'Add to Dashboard'%>
+    <%= select_tag :dashboard_id, options_for_select(@dashboards.all.pluck(:name, :id)) %>
+    <%=hidden_field_tag :location_id, @location.id %>
+    <%= submit_tag 'Add to Dashboard'%>
+  <% end %>
+</div>
+<div class="inner-container">
 
-<%= @location.address %>
+  <!-- <p>longitude: <%= @location.longitude %>, latitude: <%= @location.latitude %> </p> -->
+  <div class="temp">
+    <h3>Current Temperature</h3>
+    <p><%= @temp %></p>
+  </div>
+  <div class="weather">
+    <h3>Current Weather</h3>
+  <p>  <%= @weather %></p>
+  </div>
 
-<p>longitude: <%= @location.longitude %>, latitude: <%= @location.latitude %> </p>
+  <img class="image_show" src="<%= @location.image %>" alt="image">
+  <div id="map"></div>
 
-<img src="<%= @location.image %>" alt="image">
-<%= @location.image %>
-<div id="map"></div>
-<% @point_of_interest.each do |spot| %>
-<ul>
-<li><%= spot.name %></li>
-</ul>
-
-
-<% end %>
-
-<%= form_tag favourite_dashboard_path do%>
-<%=label_tag :dashboard_id, 'Add to Dashboard'%>
-<%= select_tag :dashboard_id, options_for_select(@dashboards.all.pluck(:name, :id)) %>
-<%=hidden_field_tag :location_id, @location.id  %>
-<%= submit_tag 'Add to Dashboard'%>
-<% end %>
+  <div class="interests">
+    <% @point_of_interest.each do |spot| %>
+      <ul>
+        <li class="points"><%= spot.name %></li>
+      </ul>
+    <% end %>
+  </div>
+</div>
+</div>
