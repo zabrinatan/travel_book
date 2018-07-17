@@ -17,14 +17,13 @@ class DashboardsController < ApplicationController
 
   end
   def show
-      @dashboard = Dashboard.find params[:id]
-
+    @dashboard = Dashboard.find params[:id]
 
   end
   def destroy
     @dashboard =  Dashboard.find params[:id]
     @dashboard.destroy
-    redirect_to dashboards_path
+    redirect_to dashboard_path(dashboard.id)
 
   end
 

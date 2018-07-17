@@ -1,10 +1,22 @@
 // Place all the styles related to the dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+body {
+  background: linear-gradient(rgba(99, 148, 170, 0.8),rgba(226, 215, 122, 0.67), rgba(23, 51, 78, 0.8));
+  background-size: auto;
+  background-repeat:no-repeat;
+}
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
 .thumbnail {
   display: inline-block;
-  margin: 60px;
+  margin: 10px 30px;
+  box-shadow: inset 1px 1px 40px 0 rgba(0,0,0,.45);
+  height: 290px;
+  border-radius: 1em;
 
 }
 
@@ -13,12 +25,54 @@
 }
 
 .thumbnail img {
-  height: 50vh;
-  width: 20vw;
+  height: 250px;
+  width: 300px;
+  // box-shadow: inset 1px 1px 40px 0 rgba(0,0,0,.45);
+
+  overflow: hidden;
+  max-width: 500px;
+  padding: 20px;
+
+
 }
 
+
 .frame {
-  height: 50vh;
-  width: 50vw;
-  display:none;
+  height: 70vh;
+  width: 70vw;
+  display: none;
+  float: right;
+}
+
+.overlay {
+  background: rgba(0,0,0,.75);
+  text-align: center;
+  padding: 25px 0 40px;
+  opacity: 0;
+  -webkit-transition: opacity 0.25s ease;
+  max-width: 500px;
+  position: relative;
+  top: -180px;
+
+}
+
+.thumbnail:hover .overlay {
+  opacity: 0.5;
+}
+
+#text {
+  font-family: Helvetica;
+  font-weight: 900;
+  color: white;
+  font-size: 29px;
+}
+
+.search_bar {
+  margin: 40px;
+  text-align: center;
+}
+.search_bar .input {
+  height:30px;
+  width: 30%;
+  border-radius: 1em;
 }

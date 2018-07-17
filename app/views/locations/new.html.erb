@@ -1,18 +1,20 @@
-<h1>Locations#new</h1>
+
+<div class="search_bar">
+<h1>Search for your next travel location</h1>
 <p>Find me in app/views/locations/new.html.erb</p>
-
 <%= form_for @location do |f| %>
-
 <%= f.label :address %>
-<%= f.text_field :address, :class =>"input"%>
+<%= f.text_field :address, :class =>'input'%>
 
 <%= f.submit 'Search'%>
 <% end %>
-
+</div>
 <% @locations[0..4].each do |location| %>
 <div class="thumbnail">
-  <%= image_tag "#{location.image}" %>
-<p><%= link_to "#{location.address}", location_path(location.id) %></p>
-
+<%= link_to image_tag("#{location.image}"), location_path(location)
+ %>
+  <div class="overlay">
+    <span id="text"><%= location.address %></span>
+  </div>
 </div>
-  <% end %>
+<% end %>
