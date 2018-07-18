@@ -1,39 +1,65 @@
 <div class="grid-container">
   <h1><%= @location.address%></h1>
-<div class="inner-container">
+  <div class="inner-container">
 
-  <!-- <p>longitude: <%= @location.longitude %>, latitude: <%= @location.latitude %> </p> -->
-  <div class="temp">
-    <h3>Current Temperature</h3>
-    <p><%= @temp %>°C</p>
-  </div>
-  <div class="weather">
-    <h3>Current Weather</h3>
-  <p>  <%= @weather %></p>
-  </div>
+    <!-- <p>longitude: <%= @location.longitude %>, latitude: <%= @location.latitude %> </p> -->
+    <div class="temp">
+      <h3>Current Temperature</h3>
+      <p><%= @temp %>°C</p>
+    </div>
+    <div class="weather">
+      <h3>Current Weather</h3>
+      <p>
+        <%= @weather %></p>
+    </div>
 
-  <img class="image_show" src="<%= @location.image %>" alt="image">
-  <div id="map">Map</div>
+    <div class="box3">
+      <h3>Current Weather</h3>
+      <p>
+        <%= @weather %></p>
+    </div>
+    <div class="box4">
+      <h3>Current Weather</h3>
+      <p>
+        <%= @weather %></p>
+    </div>
 
-<div class="row_two">
-  <div class="dash_form">
-    <%= form_tag favourite_dashboard_path do%>
-    <%=label_tag :dashboard_id, 'Add to Dashboard'%>
-    <%= select_tag :dashboard_id, options_for_select(@dashboards.all.pluck(:name, :id)) %>
-    <%=hidden_field_tag :location_id, @location.id %>
-    <%= submit_tag 'Add to Dashboard'%>
-  <% end %>
-</div>
-  <div class="interests">
-    <h3>Points of Interest</h3>
-    <div class="interest">
-    <% @point_of_interest.each do |spot| %>
-      <ul>
-        <li class="points"><%= spot.name %></li>
-      </ul>
-    <% end %>
+    <img class="image_show" src="<%= @location.image %>" alt="image">
+    <div id="map"></div>
+
+    <div class="row_two">
+      <div class="dash_form">
+        <%= form_tag favourite_dashboard_path do%>
+        <%=label_tag :dashboard_id, 'Add to Dashboard'%>
+        <%= select_tag :dashboard_id, options_for_select(@dashboards.all.pluck(:name, :id)) %>
+        <%=hidden_field_tag :location_id, @location.id %>
+        <%= submit_tag 'Add to Dashboard'%>
+      <% end %>
+    </div>
+    <div class="interests">
+      <h3>Points of Interest</h3>
+      <div class="interest">
+        <% @point_of_interest.each do |spot| %>
+          <ul>
+            <li class="points"><%= spot.name %></li>
+          </ul>
+        <% end %>
+      </div>
     </div>
   </div>
-  </div>
 </div>
 </div>
+
+<script>
+var map;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {
+      lat: <%= @location.latitude %>,
+      lng: <%= @location.longitude %>
+    },
+    zoom: 12
+  });
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDq7PyzaM_5hv6GXly9Cw4SSgrPmy0sMMQ&callback=initMap" async="async" defer="defer"></script>
