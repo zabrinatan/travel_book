@@ -1,19 +1,23 @@
 <h1 id="title"><%= @dashboard.name %></h1>
 
 <div class="board">
-<% @dashboard.locations.each do |location| %>
-  <div class="location">
-  <ul>
-    <li><%= link_to "#{location.address}" , location_path(location), :class => "dash_link"%></li>
+  <% @dashboard.locations.each do |location| %>
+    <div class="location">
+      <ul>
+        <li><%= link_to "#{location.address}" , location_path(location), :class => "dash_link"%></li>
 
-  </ul>
-  <iframe class="frame"  src="<%= location_path(location) %>"></iframe>
-
-</div>
-
-<% end %>
+      </ul>
+      <iframe class="frame" src=" /locations/<%= location.id %>/nonav"></iframe>
 
     </div>
 
-    
+  <% end %>
+  <%= form_tag "/dashboards/#{@dashboard.id}/locations/delete", :method => "delete" do%>
+  <%= label_tag "Locations" %>
+  <%= select_tag :location_id, options_from_collection_for_select(@dashboard.locations, :id, :address)%>
+
+  <%= submit_tag 'Delete' %>
+  <%end %>
+
+
 </div>

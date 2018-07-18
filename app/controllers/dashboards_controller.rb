@@ -28,6 +28,11 @@ class DashboardsController < ApplicationController
     redirect_to dashboards_path
 
   end
+  def remove
+    @dashboard = Dashboard.find params[:dashboard_id]
+    @dashboard.locations.destroy(params[:location_id])
+    redirect_back :fallback_location => root_path
+  end
 
 
   private
