@@ -1,20 +1,19 @@
-<h1><%= @dashboard.name %></h1>
-<p>Find me in app/views/dashboard/show.html.erb</p>
+<h1 id="title"><%= @dashboard.name %></h1>
 
-<div class="sidebar">
+<div class="board">
 <% @dashboard.locations.each do |location| %>
   <div class="location">
-    <ul>
-      <li><%= link_to "#{location.address}" , location_path(location), :class => "dash_link"%></li>
-    </ul>
+  <ul>
+    <li><%= link_to "#{location.address}" , location_path(location), :class => "dash_link"%></li>
 
-    <div class="controls">
-      <%= button_to "Delete #{location.address}", location_path(location), :method => 'delete' %>
-    </div>
+  </ul>
+  <iframe class="frame"  src="<%= location_path(location) %>"></iframe>
 
-    <iframe class="frame"  src="<%= location_path(location) %>"></iframe>
-  </div>
-
-
+</div>
 
 <% end %>
+
+    </div>
+
+    
+</div>

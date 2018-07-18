@@ -16,6 +16,7 @@ class DashboardsController < ApplicationController
     redirect_to dashboard_path(dashboard.id)
 
   end
+
   def show
     @dashboard = Dashboard.find params[:id]
 
@@ -24,7 +25,7 @@ class DashboardsController < ApplicationController
   def destroy
     @dashboard =  Dashboard.find params[:id]
     @dashboard.destroy
-    redirect_to dashboard_path(dashboard.id)
+    redirect_to dashboards_path
 
   end
 

@@ -38,7 +38,7 @@ class LocationsController < ApplicationController
     #google places points of interest
     @client = GooglePlaces::Client.new("AIzaSyDq7PyzaM_5hv6GXly9Cw4SSgrPmy0sMMQ")
     @point_of_interest= @client.spots_by_query(" #{@location.address} attractions")[0..9]
-
+    #weather and temp api
     weather_url = "http://api.openweathermap.org/data/2.5/find?lat=#{@location.latitude}&lon=#{@location.longitude}&appid=72428b3ec7ac8bf153765be2ca516308&cnt=1"
 
     weather_info = HTTParty.get weather_url
@@ -62,6 +62,7 @@ class LocationsController < ApplicationController
     redirect_to dashboard
 
  end
+
  def destroy
    @location = Location.find params[:id]
    @location.destroy
