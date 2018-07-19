@@ -58,6 +58,7 @@ body {
   border-radius: 1em;
 }
 
+
 .thumbnail p {
   text-align: center;
 }
@@ -197,7 +198,8 @@ margin-bottom: 15px;
 }
 
 .temp p, .weather p, .box3 p, .box4 p{
-  background-color: rgba(0, 0, 0, 0.40);
+  background-color: rgba(153, 131, 153, 0.7);
+  // rgba(0, 0, 0, 0.40);
   padding: 20px;
   margin: 0;
   color: white;
@@ -211,13 +213,13 @@ margin-bottom: 15px;
 }
 
 .interest {
-  background-color: rgba(0, 0, 0, 0.40);
+  background-color: rgba(153, 131, 153, 0.7);
   margin: 0 auto;
   display: block;
 
 }
 .temp h3, .weather h3, .interests h3, .box3 h3, .box4 h3{
-  background-color: rgba(0, 0, 0, 0.60);
+  background-color: rgba(30, 22, 54, 0.7);
   padding: 20px;
   margin: 0;
   color: white;
@@ -277,11 +279,43 @@ max-width: 200px;
 text-decoration: none;
 border-radius: 4px;
 padding: 20px 30px;
-color: rgba(30, 22, 54, 0.6);
+color: white;
+background-color: rgba(183, 167, 183, 1);
 box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
 }
 
-.dash_link:hover {
+.square {
+  text-decoration: none;
+  // color: black;
+  // border: 1px solid black;
+  -webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+-moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+-ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+-o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+display: inline-block;
+margin: 30px auto;
+margin-right: 20px;
+max-width: 200px;
+text-decoration: none;
+border-radius: 4px;
+padding: 20px 30px;
+color: rgba(30, 22, 54, 0.6);
+// box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
+background-color: rgba(128, 119, 135,0.5);
+width: 20%;
+
+}
+
+.square a {
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  display: inline-block;
+}
+
+
+.dash_link:hover, .square:hover {
   color: rgba(255, 255, 255, 0.85);
   box-shadow: rgba(30, 22, 54, 0.7) 0 80px 0px 2px inset;
 }
@@ -327,6 +361,7 @@ margin:2% 9%;
   padding: 30px 0;
   display: none;
 
+
 }
 
 ul.topnav {
@@ -362,10 +397,21 @@ ul.topnav .logins {
 }
 .dashes {
   margin-top: 20px;
+  height: 500px;
+  background: linear-gradient(45deg, rgba(144, 61, 154, 0.45) 10%, #A2C7E5 90%);
+  border-radius: 1em;
+ ;
+  width: 80%;
+  display: block;
+  margin: 0 auto;
 }
 .dashes a {
+  margin: 20px;
   padding: 20px;
+  display: inline-block;
 }
+
+
 .second {
   position: absolute;
   top: 130px;
@@ -388,6 +434,7 @@ footer {
 .user {
   // width: 90%;
   max-width: 340px;
+  margin: 10vh auto;
 }
 
 .user form {
@@ -397,6 +444,7 @@ footer {
   opacity: 0;
   transform: translate3d(0, 500px, 0);
   animation: arrive 500ms ease-in-out 0.9s forwards;
+
 }
 
 .form__input {

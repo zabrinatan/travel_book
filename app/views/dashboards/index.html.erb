@@ -24,6 +24,6 @@
 <div class="dashes">
 <% @dashboards.each do |dashboard| %>
 
-  <%= link_to "#{dashboard.name}" , dashboard_path(dashboard.id) %>
+<div class="square"> <%= link_to "#{dashboard.name}" , dashboard_path(dashboard.id), :class =>"link"%></div> 
 <% end %>
 </div>
