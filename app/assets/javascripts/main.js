@@ -6,6 +6,16 @@ $(document).ready(function () {
     $(this).closest('.location').find('.frame').slideToggle(1000);
   })
 
+  $('#minus').on('click', function(event){
+
+    $('.delete_form').slideToggle(1000);
+  })
+
+  $('#plus').on('click', function(event){
+
+    $('.add_dash').slideToggle(1000);
+  })
+
 
 
 });

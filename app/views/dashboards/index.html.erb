@@ -1,13 +1,9 @@
-<h1>Dashboard#index</h1>
+<h1 id="my_dash">My Dashboards</h1>
+<div class="add_minus">
+  <%= image_tag 'minus-circle-solid.svg', :id =>'minus' %>
+  <%= image_tag 'plus-circle-solid.svg', :id => 'plus' %>
+</div>
 
-<div class="dashes">
-<% @dashboards.each do |dashboard| %>
-<p><%= link_to "#{dashboard.name}" , dashboard_path(dashboard.id) %></p>
-<div class="controls">
-  <%= button_to "Delete #{dashboard.name}", dashboard_path(dashboard.id), :method => 'delete' %>
-</div>
-<% end %>
-</div>
 
 <div class="add_dash">
 <%= form_tag "/dashboards/dashboard" do %>
@@ -15,5 +11,19 @@
 <%= text_field_tag :name%>
 
 <%= submit_tag 'Add Dashboard'%>
+<% end %>
+</div>
+<div class="delete_form">
+<%= form_tag "/dashboards/gone", :method => "delete" do %>
+<%= label_tag "Dashboards" %>
+<%= select_tag :dashboard_id, options_from_collection_for_select(@dashboards, :id, :name)%>
+
+<%= submit_tag 'Delete' %>
+<%end %>
+</div>
+<div class="dashes">
+<% @dashboards.each do |dashboard| %>
+
+  <%= link_to "#{dashboard.name}" , dashboard_path(dashboard.id) %>
 <% end %>
 </div>

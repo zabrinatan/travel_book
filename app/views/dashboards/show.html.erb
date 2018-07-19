@@ -1,5 +1,7 @@
 <h1 id="title"><%= @dashboard.name %></h1>
-
+<div class="add_minus">
+  <%= image_tag 'minus-circle-solid.svg', :id =>'minus' %>
+</div>
 <div class="board">
   <% @dashboard.locations.each do |location| %>
     <div class="location">
@@ -12,7 +14,7 @@
     </div>
   <% end %>
 
-  <div class="delete_form">
+  <div class="second delete_form ">
   <%= form_tag "/dashboards/#{@dashboard.id}/locations/delete", :method => "delete" do%>
   <%= label_tag "Locations" %>
   <%= select_tag :location_id, options_from_collection_for_select(@dashboard.locations, :id, :address)%>

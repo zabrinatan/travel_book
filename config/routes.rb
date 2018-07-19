@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users, :only =>[:index, :new, :create]
   delete "/dashboards/:dashboard_id/locations/delete" => "dashboards#remove"
   post "/dashboards/dashboard"
+  delete "/dashboards/gone" 
   resources :locations
   resources :dashboards
   post   "/locations/favourite" => "locations#favourite",   as: :favourite_dashboard

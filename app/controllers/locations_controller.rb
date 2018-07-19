@@ -78,7 +78,7 @@ class LocationsController < ApplicationController
       @point_of_interest= @client.spots_by_query(" #{@location.address} attractions")[0..9]
 
       #points of interests name, long, lat in arrays in attempt to put markers in map on click through javascript
-      
+
       # @interest_latitude = [];
       # @interest_longitude = [];
       # @interest_name = [];

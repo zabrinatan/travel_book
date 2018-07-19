@@ -45,6 +45,11 @@ class DashboardsController < ApplicationController
     redirect_back :fallback_location => root_path
   end
 
+  def gone
+    @dashboard =  Dashboard.find params[:dashboard_id]
+    @dashboard.destroy
+    redirect_back :fallback_location => root_path
+  end
 
   private
   def dashboard_params
