@@ -1,10 +1,19 @@
 <h1>Dashboard#index</h1>
-<p>Find me in app/views/dashboard/index.html.erb</p>
 
-
+<div class="dashes">
 <% @dashboards.each do |dashboard| %>
 <p><%= link_to "#{dashboard.name}" , dashboard_path(dashboard.id) %></p>
 <div class="controls">
   <%= button_to "Delete #{dashboard.name}", dashboard_path(dashboard.id), :method => 'delete' %>
 </div>
 <% end %>
+</div>
+
+<div class="add_dash">
+<%= form_tag "/dashboards/dashboard" do %>
+<%= label_tag "Add Dashboard" %>
+<%= text_field_tag :name%>
+
+<%= submit_tag 'Add Dashboard'%>
+<% end %>
+</div>

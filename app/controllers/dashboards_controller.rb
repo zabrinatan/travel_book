@@ -1,11 +1,22 @@
 class DashboardsController < ApplicationController
   def index
     @dashboards = Dashboard.where(:user_id => @current_user)
+
   end
 
   def new
     @user = @current_user
-      @dashboard = Dashboard.new
+    @dashboard = Dashboard.new
+  end
+
+  def dashboard
+    @user = @current_user
+    dashboard = Dashboard.new
+    dashboard.user_id = @user.id
+    dashboard.name = params[:name]
+    dashboard.save
+    @user.dashboards << dashboard
+    redirect_back :fallback_location => root_path
   end
 
   def create

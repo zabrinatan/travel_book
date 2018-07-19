@@ -97,8 +97,12 @@ body {
 #text {
   font-family: Helvetica;
   font-weight: 900;
-  color: white;
   font-size: 29px;
+}
+
+#text a {
+  text-decoration: none;
+  color: white;
 }
 
 .search_bar {

@@ -1,7 +1,6 @@
 
 <div class="search_bar">
 <h1>Search for your next travel location</h1>
-<p>Find me in app/views/locations/new.html.erb</p>
 <%= form_for @location do |f| %>
 <%= f.label :address %>
 <%= f.text_field :address, :class =>'input', :placeholder => "  City, Country (eg: Sydney, Australia)",:required=>true%>
@@ -9,12 +8,13 @@
 <%= f.submit 'Search'%>
 <% end %>
 </div>
-<% @locations[0..5].each do |location| %>
+<% @locations[0..7].each do |location| %>
 <div class="thumbnail">
 <%= link_to image_tag("#{location.image}"), location_path(location)
  %>
   <div class="overlay">
-    <span id="text"><%= location.address %></span>
+    <span id="text"> <%= link_to "#{location.address}", location_path(location)%></span>
+
   </div>
 </div>
 <% end %>
