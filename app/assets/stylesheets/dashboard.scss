@@ -44,10 +44,10 @@ body {
 }
 
 .homepage {
-  background-image: url(http://www.modernbirdstudios.com/wp-content/uploads/2015/10/Elia-Locardi-Memories-Of-The-Sea-Manarola-Italy.jpg);
+  background-image: url(https://annenberg.usc.edu/sites/default/files/NYC.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  height: 60vh;
+  height: 63vh;
 }
 
 .thumbnail {
@@ -403,6 +403,13 @@ height: 90vh;
   padding-top: 40px;
 }
 
+.user .alert {
+  background:rgba(48, 48, 48, 0.71) ;
+}
+.user p {
+  color: white;
+  margin: 0 auto;
+}
 @keyframes NO {
   from, to {
     -webkit-transform: translate3d(0, 0, 0);
