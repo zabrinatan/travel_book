@@ -1,24 +1,25 @@
-# README
+# Project 1: Travel Book
+_____
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+This does not need any installation. Here is [the access to the website]( https://sleepy-depths-56530.herokuapp.com/).
 
-* Ruby version
+Travel Book was created to allow users to search for locations and their relevant information such as:
+- Current weather
+- Current temperature
+- Points of interests
+- Map of the location
 
-* System dependencies
+Travel Book also allows the functionality of creating your own dashboard and therefore be able to add locations to your dashboards to allow for easy planning of your next travel. 
 
-* Configuration
+Technologies used:
+- Ruby on Rails (v 5.2)
+- HTML and CSS
+- Javascript with jQuery library  
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+APIs used:
+- Google Geocoder API
+- Google Maps Javascript API
+- Google Places API
+- Openweathermap API
+- Flickr Images API
