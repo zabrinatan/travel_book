@@ -41,7 +41,7 @@
       <div class="interest">
         <% @point_of_interest.each do |spot| %>
           <ul>
-            <li class="points"><%= spot.name %></li>
+            <li class="points"id="<%= spot.name %>"><%= spot.name %></li>
           </ul>
         <% end %>
       </div>
@@ -52,7 +52,10 @@
 
 <script>
 var map;
+let lats;
+let longs;
 function initMap() {
+   var myLatLng = {lat: <%= @location.latitude %>, lng: <%= @location.longitude %>};
   map = new google.maps.Map(document.getElementById('map'), {
     center: {
       lat: <%= @location.latitude %>,
@@ -60,6 +63,30 @@ function initMap() {
     },
     zoom: 12
   });
+  // var marker = new google.maps.Marker({
+  //       position: myLatLng,
+  //       map: map,
+  //       title: 'Hello World!'
+  //     });
+  // $('.point').on('click', function(event) {
+  //
+  //   name = $(this).text()
+  //   for (let i=0 ; i < 10; i++){
+  //     if (<%= @interest_name %>[i] === name ) {
+  //       lats = <%= @interest_latitude %>[i]
+  //       longs = <%= @interest_longitude %>[i]
+  //     }
+  //
+  //   }
+  //   var marker = new google.maps.Marker({
+  //     var myLatLng = {lat: lats, lng: longs};
+  //          position: myLatLng,
+  //          map: map,
+  //          title: name
+  //        });
+  // })
+
 }
+
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDq7PyzaM_5hv6GXly9Cw4SSgrPmy0sMMQ&callback=initMap" async="async" defer="defer"></script>

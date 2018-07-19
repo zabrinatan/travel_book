@@ -30,6 +30,7 @@ gem 'geocoder'
 gem 'google_places'
 gem 'httparty'
 gem 'jquery-rails'
+gem 'news-api'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

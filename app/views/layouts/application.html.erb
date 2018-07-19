@@ -14,20 +14,20 @@
 
 
     <nav>
-
-    <%= link_to 'Home', root_path %>
-    <%= link_to 'Search New Location' , new_location_path %>
+    <ul class="topnav">
+  <li>  <%= link_to 'Home', root_path, :class => "active" %>
+  <li>  <%= link_to 'Search New Location' , new_location_path %>
     <% if @current_user.present? %>
 
-    <%= link_to 'Add New Dashboard', new_dashboard_path	 %>
-    <%= link_to 'My Dashboards' , dashboards_path %>
-    <%= link_to "Sign out #{@current_user.email}", login_path, :method => "delete", :class =>"logins"%>
+  <li>  <%= link_to 'Add New Dashboard', new_dashboard_path	 %>
+  <li>  <%= link_to 'My Dashboards' , dashboards_path %>
+    <li><%= link_to "Sign out #{@current_user.email}", login_path, :method => "delete", :class =>"logins"%>
 
     <% else %>
-    <%= link_to 'Sign up', new_user_path, :class =>"logins" %>
-    <%= link_to 'Sign in', login_path, :class =>"logins" %>
+  <li>  <%= link_to 'Sign up', new_user_path, :class =>"logins" %>
+  <li>  <%= link_to 'Sign in', login_path, :class =>"logins" %>
   <% end %>
-
+</ul>
   </nav>
   <div class="container">
 

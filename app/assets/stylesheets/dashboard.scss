@@ -1,7 +1,6 @@
 // Place all the styles related to the dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 body {
   // background: linear-gradient(rgba(99, 148, 170, 0.8),rgba(226, 215, 122, 0.67), rgba(23, 51, 78, 0.8));
   background-color: white;
@@ -113,25 +112,17 @@ body {
   border-radius: 1em;
 }
 
-nav {
-  background-color: rgba(0, 0, 0, 0.73);
-  padding: 4vh;
-}
-
-nav a {
-  text-decoration: none;
-  color: white;
-  margin: 30px;
-  font-size: 3vh;
-  padding: 10px;
-}
-
-// .sidebar {
-//   position: fixed;
-//   width: 200px;
-//   height: 100%;
+// nav {
 //   background-color: rgba(0, 0, 0, 0.73);
-//   top: 162px;
+//   padding: 4vh;
+// }
+//
+// nav a {
+//   text-decoration: none;
+//   color: white;
+//   margin: 30px;
+//   font-size: 3vh;
+//   padding: 10px;
 // }
 
 .points {
@@ -251,13 +242,32 @@ margin-bottom: 15px;
 
 .dash_link {
   text-decoration: none;
-  color: black;
+  // color: black;
+  // border: 1px solid black;
+  -webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+-moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+-ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+-o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+display: block;
+margin: 5px auto;
+max-width: 100px;
+text-decoration: none;
+border-radius: 4px;
+padding: 20px 30px;
+color: rgba(30, 22, 54, 0.6);
+box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
+}
+
+.dash_link:hover {
+  color: rgba(255, 255, 255, 0.85);
+  box-shadow: rgba(30, 22, 54, 0.7) 0 80px 0px 2px inset;
 }
 
 .location {
   grid-row: 1;
   display: inline-block;
-  width: 10%;
+
   float: left;
   list-style: none;
 }
@@ -286,4 +296,152 @@ margin:2% 9%;
   height: 5%;
   text-align: center;
   margin: 0% 7%;
+}
+
+.delete_form {
+  position: absolute;
+  top: 16%;
+  right: 6%;
+}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+ul.topnav li {
+  float: left;
+}
+
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 30px 16px;
+    text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {
+  background-color: #111;
+}
+
+ul.topnav li a.active {
+  background-color: #111;
+}
+
+ul.topnav .logins {
+  float: right;
+}
+
+@media screen and (max-width: 600px){
+    ul.topnav li.logins,
+    ul.topnav li {float: none;}
+}
+
+.user {
+  // width: 90%;
+  max-width: 340px;
+  margin: 10vh auto;
+}
+
+.user form {
+  margin-top: 40px;
+  border-radius: 6px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translate3d(0, 500px, 0);
+  animation: arrive 500ms ease-in-out 0.9s forwards;
+}
+
+.form__input {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    -webkit-appearance: none;
+    border: 0;
+    outline: 0;
+    transition: 0.3s;
+    background-color:rgba(252, 252, 252, 0.49);
+
+    &:focus {
+        background: darken(rgba(252, 252, 252, 0.49), 5%);
+    }
+}
+.btn {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    -webkit-appearance: none;
+    outline: 0;
+    border: 0;
+    color: white;
+    background:rgba(48, 48, 48, 0.71) ;
+    transition: 0.3s;
+
+    &:hover {
+        background: darken(rgba(48, 48, 48, 0.71), 8%);
+    }
+}
+
+.form--no {
+    animation: NO 1s ease-in-out;
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+.user_container {
+background-image: url(https://media.cntraveler.com/photos/56cf6b7569d8fae9411b181a/master/pass/Adriano_Neves_Portugual_Shortlist_Open_Travel_2016.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+height: 90vh;
+}
+.user_container h1 {
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+@keyframes NO {
+  from, to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+@keyframes arrive {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 50px, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes move {
+    0% {
+        background-position: 0 0
+    }
+
+    50% {
+        background-position: 100% 0
+    }
+
+    100% {
+        background-position: 0 0
+    }
 }

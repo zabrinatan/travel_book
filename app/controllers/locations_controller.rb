@@ -76,6 +76,22 @@ class LocationsController < ApplicationController
       #google places points of interest
       @client = GooglePlaces::Client.new("AIzaSyDq7PyzaM_5hv6GXly9Cw4SSgrPmy0sMMQ")
       @point_of_interest= @client.spots_by_query(" #{@location.address} attractions")[0..9]
+
+      #points of interests name, long, lat in arrays in attempt to put markers in map on click through javascript
+      
+      # @interest_latitude = [];
+      # @interest_longitude = [];
+      # @interest_name = [];
+      #   @point_of_interest.each do |spot|
+      #   formatted_address = spot['formatted_address']
+      #   int_name = spot['name']
+      #   lat_long = Geocoder.search("#{formatted_address}")
+      #   coords= lat_long.first.coordinates
+      #   @interest_latitude << coords.first
+      #   @interest_longitude << coords.last
+      #   @interest_name << int_name
+      #   end
+
       #weather and temp api
       weather_url = "http://api.openweathermap.org/data/2.5/find?lat=#{@location.latitude}&lon=#{@location.longitude}&appid=72428b3ec7ac8bf153765be2ca516308&cnt=1"
 

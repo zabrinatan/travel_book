@@ -10,14 +10,15 @@
       <iframe class="frame" src=" /locations/<%= location.id %>/nonav"></iframe>
 
     </div>
-
   <% end %>
+
+  <div class="delete_form">
   <%= form_tag "/dashboards/#{@dashboard.id}/locations/delete", :method => "delete" do%>
   <%= label_tag "Locations" %>
   <%= select_tag :location_id, options_from_collection_for_select(@dashboard.locations, :id, :address)%>
 
   <%= submit_tag 'Delete' %>
   <%end %>
-
+</div>
 
 </div>
