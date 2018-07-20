@@ -10,7 +10,7 @@ Travel Book was created to allow users to search for locations and their relevan
 - Points of interests
 - Map of the location
 
-Travel Book also allows the functionality of creating your own dashboard and therefore be able to add locations to your dashboards to allow for easy planning of your next travel. 
+Travel Book also allows the functionality of creating your own dashboard and therefore be able to add locations to your dashboards to allow for easy planning of your next travel.
 
 Technologies used:
 - Ruby on Rails (v 5.2)
@@ -23,3 +23,8 @@ APIs used:
 - Google Places API
 - Openweathermap API
 - Flickr Images API
+
+Future improvements:
+- Add more useful functionalities such as news headlines by location
+- Polish responsiveness of website
+- Fix some bugs
